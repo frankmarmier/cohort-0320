@@ -2,7 +2,7 @@
 
 Wax on - Wax off
 
-![wax on wax off](https://media0.giphy.com/media/J2xkAW1E8kvyE/giphy.gif?cid=ecf05e473c7f433195c8ed89340c68f2b27d498c24b2266b&rid=giphy.gif)
+![wax on wax off](https://3.bp.blogspot.com/-4kOzfcFpEcw/WZBQvuogVqI/AAAAAAAACTI/e6bFXR4o-Cwlu07OtBLK0nj6cNid6Xj7gCLcBGAs/s1600/giphy%2B%252869%2529.gif)
 
 ## Instructions
 
