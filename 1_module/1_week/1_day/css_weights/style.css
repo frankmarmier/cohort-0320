@@ -1,0 +1,23 @@
+#first-section {
+  color: green;
+}
+
+.content {
+  color: red;
+}
+
+.list {
+  color: purple;
+}
+
+.some-other-class {
+  color: yellow;
+}
+
+.list-item {
+  color: dodgerblue;
+}
+
+/* .list .list-item {
+  color: rgb(212, 16, 238);
+} */

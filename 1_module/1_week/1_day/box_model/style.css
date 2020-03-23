@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+.parent {
+  height: 200px;
+  width: 200px;
+  border: 1px solid;
+}
+
+.child {
+  height: 100px;
+  padding: 10px;
+  /* width: 100px; */
+  /* width: calc(100% - 30px); */
+  width: 100%;
+  border: 5px solid blue;
+}
+
+.blocks {
+  font-size: 0;
+}
+
+.block {
+  height: 200px;
+  background-color: dodgerblue;
+  width: calc(33% - 20px);
+  margin: 10px;
+  display: inline-block;
+}
+
+.my-centered-div {
+  background-color: pink;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  vertical-align: middle;
+}
+
+.my-centered-div h2 {
+  /* vertical-align: middle; */
+  line-height: 200px;
+}

@@ -1,0 +1,15 @@
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+td,
+th {
+  padding: 7px;
+  text-align: center;
+}
+
+table.merged {
+  border-collapse: collapse;
+}
