@@ -87,6 +87,7 @@ body {
 /* By default elements are position
   static
   */
-.margin-top{
+
+.margin-top {
   margin-top: 20px;
 }
