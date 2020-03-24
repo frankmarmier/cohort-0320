@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: rgb(53, 54, 58);
+  color: whitesmoke;
+}
+
+.main {
+  padding: 40px;
+  height: 800vh;
+}
+
+.bg-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: darkorchid;
+  border: 1px solid white;
+}
+
+.is-absolute {
+  position: absolute;
+  top: 0;
+  /* bottom: 0; */
+
+  right: 0;
+}
+
+.is-relative {
+  position: relative;
+  top: 30px;
+  left: 100px;
+}
+
+.vh-300 {
+  height: 300vh;
+  /* width: 300vh; */
+}
+
+.is-sticky {
+  position: sticky;
+  top: 10px;
+  z-index: 12;
+  /* top: 50%; */
+  /* left: 0; */
+}
+
+/* .is-fixed {
+  position: fixed;
+  background-color: yellow;
+  bottom: 0;
+  right: left;
+  z-index: 11;
+} */
+
+.is-floated-left {
+  float: left;
+  z-index: 99;
+}
+
+.is-floated-right {
+  float: right;
+}
+
+.of-hidden {
+  overflow: hidden;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+/* By default elements are position
+  static
+  */
+.margin-top{
+  margin-top: 20px;
+}
