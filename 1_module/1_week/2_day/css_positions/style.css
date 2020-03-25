@@ -42,8 +42,6 @@ body {
 
 .is-relative {
   position: relative;
-  top: 30px;
-  left: 100px;
 }
 
 .vh-300 {
@@ -59,13 +57,13 @@ body {
   /* left: 0; */
 }
 
-/* .is-fixed {
+.is-fixed {
   position: fixed;
   background-color: yellow;
   bottom: 0;
   right: left;
   z-index: 11;
-} */
+}
 
 .is-floated-left {
   float: left;
