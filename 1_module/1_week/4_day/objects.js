@@ -44,9 +44,27 @@ for (let key of keys) {
 
 console.log(Object.entries(myObject));
 
-myObject.favouriteBook = {
-  title: "Matrix",
-  pages: 10000
-};
+// myObject.favouriteBook = {
+//   title: "Matrix",
+//   pages: 10000,
+// };
 
-console.log(myObject);
+// console.log(myObject);
+
+// test if property exists
+
+console.log("toto" in myObject);
+
+let string = "hello world";
+
+console.log(string[0]);
+
+string[0] = "p";
+console.log(string);
+
+let array = ["hello"];
+
+console.log(array[0]);
+array[0] = "world";
+
+console.log(array);
