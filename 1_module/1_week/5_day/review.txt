@@ -98,5 +98,3 @@ if("firstName" in o.person)
 
 o.person.address.street
 o.person.books[0]
-
-
