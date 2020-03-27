@@ -44,4 +44,27 @@ function sum(num1, num2) {
 console.log(sum(2, 4));
 // console.log(sum(2, undefined));
 
-console.log(y);
+// function foo(){}
+
+const foo = () => {
+  return "Iam a fat arrow function !";
+};
+
+const foo2 = () => "Iam a fat arrow function 2 !";
+
+console.log(foo());
+console.log(foo2());
+
+const bar = str => 1 + 1;
+
+const reverse = str => str.split("").reverse().join("");
+
+
+const sum2 = (num1,num2) => num1 + num2;
+
+console.log(sum2(9,10))
+// function bar2(str) {
+//   return 1 + 1;
+// }
+
+console.log(bar("hello"));
