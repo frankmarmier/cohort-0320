@@ -1,0 +1,103 @@
+
+true && true => true
+true && false => false
+false && true => false
+false && false => false
+!false && !false => true 
+!true && false => false
+!false && true => true
+
+true || true => true
+true || false => true
+false || false => false
+true || !false => true
+!false || !true => true
+!false || !false => true
+
+
+Data types 
+
+string
+number
+boolean
+undefined
+null
+object
+symbol
+BigInt
+
+
+// Testing if it's an array
+    Array.isArray(yourArray)
+
+
+different loops for arrays
+
+for(let i = 0; i < value; i++){}
+
+myArray.forEach(function(currentValue,i,array){
+    // do something
+})
+
+while...
+do...while
+
+for(let value of myArray){
+    // do something
+}
+
+
+arrays
+
+Add an element => myArray.push(value1, value2,....)
+Remove from end => myArray.pop()
+Add at start => myArray.unshift(value1,value2,....)
+Remove from start => myArray.shift()
+Remove at a certain index =>  myArray.splice(startingIndex,numberOfItemstoRemove)
+Accessing => myArray[index];
+Accessing the last element => myArray[myArray.length - 1]
+
+
+
+objects 
+
+const object = {
+    firstName: "Anne",
+    lastName: "Patana"
+}
+
+Accessing a property => object.firstName || object.property < dot notation  || object["firstName"]
+Adding a property => object.property = "value"
+
+looping through the object's properties
+
+for(let prop in object){
+    // do something
+}
+
+removing a property => delete object.firstName || object.property
+
+
+
+const o = {
+    person: {
+        firstName: "Sebastien",
+        lastName: "Dubois",
+        address: {
+            street: "eiufeauifha",
+            number: "efaiufhaeifa"
+        },
+        books: ["dzadz","dazddaa"]
+    }
+}
+
+
+o.person.firstName
+
+if("firstName" in o.person)
+
+
+o.person.address.street
+o.person.books[0]
+
+
