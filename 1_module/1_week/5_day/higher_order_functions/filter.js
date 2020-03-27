@@ -86,7 +86,7 @@ const students = [
   }
 ];
 
-// const squad0320 = students.filter(function(student) {
+// const squad0120 = students.filter(function(student) {
 //   if (student.squad === "Squad 0120") {
 //     return true;
 //   } else {
@@ -105,6 +105,7 @@ function getSquad0120(student) {
 }
 
 const squad0320 = students.filter(getSquad0320);
+
 const squad0120 = students.filter(getSquad0120);
 
 console.log(squad0320);
