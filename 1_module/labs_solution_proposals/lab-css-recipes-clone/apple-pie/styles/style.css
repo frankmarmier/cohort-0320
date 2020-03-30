@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  /* Reset the default margin / padding applied by browsers. */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  /* Reset the default margin / padding applied by browsers. */
+  margin: 0;
+  padding: 0;
+}
+
+/* https://css-tricks.com/centering-css-complete-guide/
+
+    This solution on centering the title vertically is an old hack.
+    Since the lesson didn't cover flexbox, we had to find a way to center it.
+    Have a look at the provided link to learn more about how to position elements.
+    There are of course other ways to center it by using margin / padding but that would 
+    require to manually test all the values until it fits, and as soon as you resize the window,
+    the layout breaks.
+*/
+
+.header {
+  background-image: url("../images/apple-pie.jpg");
+  height: 90vh;
+  width: 100%;
+  background-position: 0 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: table;
+  text-align: center;
+}
+
+.main-title {
+  display: table-cell;
+  font-weight: 300;
+  font-size: 4rem;
+  vertical-align: middle;
+}
+
+.container {
+  margin: 40px 20%;
+  font-weight: 300;
+}
+
+.title {
+  font-weight: 300;
+}
+
+.info {
+  font-size: 20px;
+}
+
+img.recipe-info {
+  width: 400px;
+  display: block; /* Changing the display to block, allows us to center the image 
+  with margin: 0 auto 
+  */
+  margin: 0 auto;
+}
+
+img.cooking-info {
+  width: 350px;
+  display: block;
+  margin: 20px auto;
+}
+
+#ingredients > .list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Here is an example on how to change the default appearance of bullet points.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment
+*/
+
+#directions > .list {
+  list-style-type: none;
+  counter-reset: myCounter; /* Your counter variable name */
+  margin: 0;
+  padding: 0;
+}
+
+#directions > .list .list-item::before {
+  counter-increment: myCounter 1; /* Increment your counter value by 1 */
+  content: counter(myCounter) ") "; /* Sets how your counter will be displayed */
+}
