@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  border: 1px solid black;
+  /* duration | timing-function | delay | 
+iteration-count | direction | fill-mode | play-state | name */
+  animation: 2s linear infinite rotateBox, 2s linear infinite changeColor;
+}
+
+@keyframes rotateBox {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes changeColor {
+  /* from {
+    background-color: dodgerblue;
+  }
+  to {
+    background-color: plum;
+  } */
+  0% {
+    background-color: dodgerblue;
+  }
+  25% {
+    background-color: plum;
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: rebeccapurple;
+  }
+  100% {
+    background-color: tomato;
+  }
+}
