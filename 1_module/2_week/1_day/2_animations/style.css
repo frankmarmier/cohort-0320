@@ -9,6 +9,9 @@
   border: 1px solid black;
   /* duration | timing-function | delay | 
 iteration-count | direction | fill-mode | play-state | name */
+}
+
+.box.is-rotating {
   animation: 2s linear infinite rotateBox, 2s linear infinite changeColor;
 }
 

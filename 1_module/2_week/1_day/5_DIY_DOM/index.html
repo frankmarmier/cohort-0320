@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+    <title>DOM DIY !</title>
+  </head>
+  <body>
+    <main class="container">
+      <section id="instructions">
+        <h2>Instructions</h2>
+        <div class="iterations">
+          <article>
+            <h4>Step 1</h4>
+            <p>
+              Add an <b>input</b> and a <b>button</b> to the markup <br />
+              @click on the button, you should take the input value and and use
+              it to add a student to the student list. <br />
+              Reset the input. <br />
+              You are free to use whatever technique you want. <br />
+              hint: innerHTML, createElement...
+            </p>
+          </article>
+          <article>
+            <h4>Step 2</h4>
+            <p>
+              Add an event handler @click either on the student list parent (the
+              ul) <br />
+              or individually on the li's when creating them. The event handler
+              should toggle / add / remove a class to the clicked li <br />
+              Create the class in the css in order to see the changes when the
+              element is clicked. You're free to choose the properties you want
+              to apply. <br />
+              Make it a transition - You're free to choose what property you
+              want.
+            </p>
+          </article>
+          <article>
+            <h4>Bonus</h4>
+            <p>
+              Add a delete button to the markup <br />
+              Add an event handler to the button that should remove all the
+              elements that have been selected. <br />
+              (The selected elements are the elements that have a class applied
+              to them when a user has clicked on them)
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Cohort 0320 List</h2>
+        <input class="input" type="text" />
+        <button id="add-button" class="btn btn-add">Add</button>
+        <ul id="students" class="students">
+          <li class="student">Franck</li>
+        </ul>
+        <button id="remove-button">Remove</button>
+      </section>
+    </main>
+  </body>
+</html>
