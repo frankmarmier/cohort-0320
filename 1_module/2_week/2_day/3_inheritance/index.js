@@ -36,12 +36,15 @@ class Villain extends Character {
   }
 
   fight() {
-    // super.fight();
+    // super.fight(); // If you want to invoke the parent class method.
     console.log(`Muhahah i am a Villain fighting with ${this.weapon}`);
   }
 
-  jumpSuperHigh() {
-    console.log("Jumping super high");
+  jumpSuperHigh(argument1) {
+    // this.fight();
+    console.log(argument1)
+    return "Jumping ...";
+    // console.log("Jumping super high");
   }
 }
 
@@ -53,11 +56,13 @@ class SuperHero extends Hero {
 }
 
 const batman = new SuperHero("Batman", "Money", 10, "Robin");
-console.log(batman);
-batman.fly();
+// console.log(batman);
+// batman.fly();
 const toto = new Hero("Toto", "JavaScript", 1000);
-console.log(toto);
-// const chrono = new Villain("Chrono", "Sword");
+// console.log(toto);
+const chrono = new Villain("Chrono", "Sword");
+let message = chrono.jumpSuperHigh("Hello");
+console.log(message);
 // console.log(chrono);
 // toto.fight();
 // chrono.fight();
@@ -68,3 +73,5 @@ console.log(toto);
 
 // console.log(toto);
 // console.log(toto, chrono);
+
+

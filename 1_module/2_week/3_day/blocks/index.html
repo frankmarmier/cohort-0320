@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./index.js"></script>
+    <title>Let's practice !</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="content">
+        <h2>Let's practice !</h2>
+
+        <p class="description">
+          Create a simple program with 2 inputs: <br />
+          One should be type number, the other one type color <br />
+          Add a button and @click, you should manage to find a way to create
+          blocks <br />
+          with the selected color and the amount displayed inside the input type
+          text. <br />
+        </p>
+        <p class="description">
+          Extra 1: Provide a reset button to remove all the blocks. <br />
+          Extra 2: Provide a way to add a class when a block is selected. <br />
+          Extra 3: Provide a way to remove all the blocks that have the added
+          selected class.
+        </p>
+      </section>
+
+      <section class="content">
+        <div class="one-class">Text</div>
+        <div class="one-class">Other text</div>
+        <input id="input-number" type="number" min="1" max="10" value="1" />
+        <input id="input-color" type="color" />
+        <button class="btn" id="create-block">Create blocks</button>
+        <button class="btn" id="reset-blocks">Reset blocks</button>
+        <button class="btn" id="remove-selected-blocks">
+          Remove selected blocks
+        </button>
+        <div id="blocks"></div>
+      </section>
+    </main>
+  </body>
+</html>

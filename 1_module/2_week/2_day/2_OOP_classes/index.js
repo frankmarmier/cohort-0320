@@ -3,28 +3,51 @@
  * Syntactical sugar.
  */
 
-class Rover {
-  constructor(name, x) {
-    this.name = name;
-    this.x = x;
-    this.y = 1;
-    this.direction = "N";
-  }
-
-  turnLeft() {
-    console.log("method defined in class");
-    //   console.log(this, "executed");
-    //   this.direction = "S";
-  }
-}
-
-// Rover.prototype.turnLeft = function (){
-//   console.log("Some other execution....")
+// function checkIfValidDirection(direction) {
+//   if (direction !== "N") {
+//     throw Error("Direction has to be N !");
+//   } else {
+//     return direction;
+//   }
 // }
 
-const rover1 = new Rover("Toto", 10);
-const rover2 = new Rover("Curiosity", 12);
+class Rover {
+  constructor(name, x, direction) {
+    this.name = name || "Standard Rover";
+    this.x = x || 10;
+    this.y = 1;
+    this.direction = direction || "S";
+    // this.turnLeft = () => {
+    //   console.log("I am turning left...");
+    // };
+  }
+  turnLeft() {
+    console.log(this.direction);
+  }
+  // turnLeft = () => {
+  //   console.log("I am turning left...");
+  // };
+}
+
 // console.log(rover1);
+const rover1 = new Rover(null, null, direction);
+// const rover1 = new Rover("Wall E", 2);
+// console.log(rover1);
+// Rover.prototype.turnLeft = function() {
+//   console.log("New turning left function");
+// };
+console.log(rover1);
+rover1.turnLeft();
+console.log(Rover.prototype);
+
+// console.log(Rover.prototype);
+
+// Rover.prototype.turnLeft = function() {
+//   console.log("Redefined turnLeft function");
+// };
+
+// rover1.turnLeft();
+
 // console.log(rover2);
 
 // rover2.turnLeft();
@@ -38,16 +61,16 @@ const rover2 = new Rover("Curiosity", 12);
 // rover1.turnLeft = function() {
 //   console.log("toto");
 // };
-rover1.turnLeft();
-rover2.turnLeft();
+// rover1.turnLeft();
+// rover2.turnLeft();
 // rover2.turnLeft();
 
 // Rover.prototype.turnLeft = function() {
 //   console.log("Newly defined method");
 // };
 
-rover1.turnLeft();
-rover2.turnLeft();
+// rover1.turnLeft();
+// rover2.turnLeft();
 // console.log(Rover.prototype);
 
 /**************
