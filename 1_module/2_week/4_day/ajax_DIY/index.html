@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script type="module" src="./index.js"></script>
+    <title>Get States !</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="instructions">
+        <h2>States of America DIY !</h2>
+        <p class="description">
+          Make an HTTP Request using axios ! <br />
+          Include the cdn inside the head tag. <br />
+          You can find it <a href="https://cdnjs.com/libraries/axios">here</a>
+          <br />
+          Display a list of all the states of america. <br />
+          Note: All the countries are in an object so you cannot loop over it
+          with a <code>forEach()</code> find a way to loop over the object ;)
+          <br />
+          Add an input to the html. <br />
+          Set an event event listener @input in order to filter the list. <br />
+        </p>
+      </section>
+
+      <section class="instructions">
+        <h2>States of America !</h2>
+        <input
+          id="input"
+          class="input"
+          type="text"
+          placeholder="Filter states..."
+        />
+        <ul id="list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
