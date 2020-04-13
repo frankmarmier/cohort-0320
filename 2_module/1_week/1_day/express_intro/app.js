@@ -1,8 +1,8 @@
 const express = require("express");
+
 const hbs = require("hbs");
 
 const server = express();
-
 
 server.set("view engine", "hbs"); // Sets the default view engine, here hbs
 
@@ -40,7 +40,6 @@ server.get("/about", (request, response) => {
 server.get("/contacts", (request, response) => {
   response.send("Welcome to contacts");
 });
-
 
 server.listen(3001, () => {
   console.log("Server running...");
