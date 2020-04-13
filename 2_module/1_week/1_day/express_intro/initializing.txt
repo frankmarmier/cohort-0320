@@ -1,0 +1,7 @@
+1- mkdir my_super_project
+2- cd ./my_super_project
+3- touch app.js (can be named as you wish, mostly named app.js, server.js, index.js)
+4- npm init (-y)  -y is optional => Creates a package.json
+5- npm install express
+6- npm install hbs
+7- Create a views folder that will be holding all your views.

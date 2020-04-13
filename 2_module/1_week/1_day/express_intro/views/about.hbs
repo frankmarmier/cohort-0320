@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Welcome to about page
+    <p>{{ information }}</p>
+    <ul>
+        {{#each creators }}
+        <li>{{ this }}</li>
+        {{/each}}
+    </ul>
+
+    <ul>
+        {{#each pets}}
+        <li>{{this.name}} | {{this.type}} {{this.address.city}}</li>
+        {{/each}}
+    </ul>
+</body>
+
+</html>
