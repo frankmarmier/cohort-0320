@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{{!-- <img src="/images/big_cat.jpg" alt=""> --}}
+<h1>Home page</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/main.js"></script>
-    <title>{{ title }}</title>
-</head>
+<p>Number of users: {{count}}</p>
 
-<body>
+{{#if isLoggedIn}}
+<p>You are logged in !</p>
+{{else}}
+<p>You have to sign in</p>
+{{/if}}
 
-    <img src="/images/big_cat.jpg" alt="">
-    <h1>Home page</h1>
+{{>userList }}
 
-
-    <p>Number of users: {{count}}</p>
-
-    {{#if isLoggedIn}}
-    <p>You are logged in !</p>
-    {{else}}
-    <p>You have to sign in</p>
-    {{/if}}
-
-    {{#each users}}
-    <p>{{this.name}}</p>
-    {{/each}}
-
-    {{#unless myKey}}
-    <p>Hello</p>
-    {{/unless}}
-
-
-
-</body>
-
-</html>
+{{#unless myKey}}
+<p>Hello</p>
+{{/unless}}

@@ -1,0 +1,25 @@
+body {
+  background-color: darkorchid;
+}
+
+.img {
+  max-width: 200px;
+}
+
+.nav-bar {
+  background-color: sienna;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: 0;
+}
