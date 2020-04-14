@@ -1,0 +1,26 @@
+Initializing a web application and configuring will always be the same.
+Depending on the needs of your application the setup will probably defer.
+But the core setup will remain the same.
+
+
+1/ Initializing
+
+    - mkdir YOUR_APPLICATION_FOLDER
+    - cd ./YOUR_APPLICATION_FOLDER
+    - npm init -y
+    - git init (why not)
+    - touch .gitignore
+    - touch app.js or server.js or index.js (you can name this as you please but it's common to have either of these names)
+
+2/ Adding a script to your package.json
+
+script: {
+    dev:"nodemon ./app.js -e hbs,js"
+}
+
+
+3/ Adding files / folders to ignore in the .gitignore file
+
+    - .env
+    - node_modules
+    
