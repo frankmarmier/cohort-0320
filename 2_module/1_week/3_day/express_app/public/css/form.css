@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form .input {
+  max-width: 420px;
+  padding: 4px 6px;
+  font-size: 14px;
+  display: block;
+  border: 1px solid black;
+}
+
+.form .btn {
+  max-width: 150px;
+  padding: 10px 12px;
+  background-color: white;
+  font-size: 16px;
+}

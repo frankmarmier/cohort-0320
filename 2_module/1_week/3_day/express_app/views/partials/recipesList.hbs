@@ -1,0 +1,8 @@
+<div class="recipes">
+    {{#each recipes}}
+    <article class="recipe">
+        <p><i>{{this.title}}</i> | Time: {{this.duration}}min </p>
+        <p>Made by: <b>{{ this.creator }}</b></p>
+        <a href="/recipes/{{this._id}}">See more...</a>
+    </article>
+    {{/each}}</div>
