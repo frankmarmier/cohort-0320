@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //Routers
 const baseRouter = require("./routes/baseRoutes");
 const recipesRouter = require("./routes/recipes");
-console.log(baseRouter)
+console.log(baseRouter);
 app.use("/", baseRouter);
 app.use("/", recipesRouter);
 

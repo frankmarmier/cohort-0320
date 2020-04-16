@@ -144,7 +144,7 @@ async function seeds() {
   }
 }
 
-seeds();
+// seeds();
 // console.log("I am after the function")
 
 // Before async await

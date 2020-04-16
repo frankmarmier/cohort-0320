@@ -62,13 +62,14 @@ class Rover {
   }
 }
 
-const rover = new Rover();
-let message = rover.getRoverPosition();
-console.log(message);
-rover.turnRight();
-rover.moveForward();
-rover.moveForward();
-rover.moveForward();
-rover.moveForward();
-message = rover.getRoverPosition();
-console.log(message);
+// const rover = new Rover();
+// let message = rover.getRoverPosition();
+// console.log(message);
+// rover.turnRight();
+// rover.moveForward();
+// rover.moveForward();
+// rover.moveForward();
+// rover.moveForward();
+// message = rover.getRoverPogisition();
+// console.log(message);
+
