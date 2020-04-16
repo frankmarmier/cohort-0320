@@ -1,0 +1,20 @@
+{
+  "name": "params_and_query",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.9.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon ./index.js -e hbs,js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

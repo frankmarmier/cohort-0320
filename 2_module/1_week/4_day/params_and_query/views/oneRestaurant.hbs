@@ -1,0 +1,9 @@
+<h2>{{restaurant.name}}</h2>
+<p>{{restaurant.rating}}</p>
+<img src="{{restaurant.image}}" alt="">
+
+<ul>
+    {{#each restaurant.typeOfFood}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
