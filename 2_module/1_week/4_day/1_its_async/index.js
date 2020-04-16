@@ -10,7 +10,6 @@ const MONGODB_URI = "mongodb://localhost:27017/recipe-app";
 // Connection to the database "recipe-app"
 
 const newRecipe = {
-  title: "Pasta di franckles",
   level: "Easy Peasy",
   ingredients: ["Pasta", "Tomato sauce"],
   cuisine: "Home made",
@@ -118,33 +117,34 @@ const newRecipe = {
 //   });
 
 // With async await
-// async function seeds() {
-//   try {
-//     const self = await mongoose.connect(MONGODB_URI, {
-//       useCreateIndex: true,
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     });
-//     console.log("Promise n°1");
-//     await self.connection.dropDatabase();
-//     console.log("Promise n°2");
-//     const createdRecipe = await Recipe.create(newRecipe);
-//     console.log("Promise n°3");
-//     const createdRecipes = await Recipe.insertMany(data);
-//     console.log("Promise n°4");
-//     const updatedRecipe = await Recipe.updateOne(
-//       { title: "Rigatoni alla Genovese" },
-//       { duration: 200 }
-//     );
-//     const deletedRecipe = await Recipe.deleteOne({ title: "Carrot Cake" });
-//     console.log("Promise n°5");
-//     // console.log(createdRecipe)
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+async function seeds() {
+  try {
+    const self = await mongoose.connect(MONGODB_URI, {
+      useCreateIndex: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Promise n°1");
+    await self.connection.dropDatabase();
+    console.log("Promise n°2");
+    const createdRecipes = await Recipe.insertMany(data);
+    console.log("Promise n°3");
+    const createdRecipe = await Recipe.create(newRecipe).catch(err => console.log(err));
+    console.log("Promise n°4");
 
-// seeds();
+    const updatedRecipe = await Recipe.updateOne(
+      { title: "Rigatoni alla Genovese" },
+      { duration: 200 }
+    );
+    const deletedRecipe = await Recipe.deleteOne({ title: "Carrot Cake" });
+    console.log("Promise n°5");
+    // console.log(createdRecipe)
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+seeds();
 // console.log("I am after the function")
 
 // Before async await
