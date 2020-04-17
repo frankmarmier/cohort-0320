@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .title {
+  margin-bottom: 20px;
+}
+
+.form .btn {
+  max-width: 150px;
+  margin: 10px 0;
+  padding: 6px 8px;
+  background-color: ghostwhite;
+  border: 1px solid black;
+  font-size: 16px;
+  font-family: inherit;
+  transition: background-color linear 0.2s, color linear 0.2s;
+}
+
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin-bottom: 10px;
+}
+
+.form .label {
+  font-weight: 300;
+}
+
+.form .input,
+.form select {
+  padding: 6px 8px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.form .input:focus {
+  outline: 2px solid dodgerblue;
+}
+
+.form .btn:hover {
+  background-color: black;
+  color: ghostwhite;
+}

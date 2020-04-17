@@ -1,0 +1,18 @@
+.nav-bar {
+  height: 60px;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  width: max-content;
+  margin-left: auto;
+}
+
+.nav-list > *:not(:last-child) {
+  margin-right: 10px;
+}
