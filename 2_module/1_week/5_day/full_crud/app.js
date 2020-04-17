@@ -10,6 +10,8 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
+app.use(express.urlencoded({ extended: false }));
+
 app.use("/", require("./routes/baseRoutes"));
 app.use("/", require("./routes/foods"));
 

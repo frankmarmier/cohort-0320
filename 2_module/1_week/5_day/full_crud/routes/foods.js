@@ -21,6 +21,26 @@ router.get("/foods/create", (req, res) => {
   });
 });
 
+router.post("/foods", (req, res) => {
+  // console.log(req.body);
+  // console.log("Inside foods post routes....");
+  Food.create(req.body)
+    .then((dbResult) => {
+      // Food.find({}).then(dbResult => {
+      //   res.render("foods/allFoods.hbs",{
+      //     foods: dbResult,
+      //     css: ["foods.css"]
+      //   })
+      // }).catch(err => {
+      //   console.log(err)
+      // })
+      res.redirect("/foods");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.get("/foods/manage", (req, res) => {
   Food.find({})
     .then((dbResult) => {
