@@ -14,7 +14,8 @@
             <td>{{this.name}}</td>
             <td>{{this.price}}</td>
             <td>{{this.type}}</td>
-            <td>Edit/Delete</td>
+            <td> <a href="/foods/edit/{{this._id}}">Edit</a>/ <a class="link"
+                    href="/foods/delete/{{this._id}}">Delete</a></td>
         </tr>
         {{/each}}
     </tbody>

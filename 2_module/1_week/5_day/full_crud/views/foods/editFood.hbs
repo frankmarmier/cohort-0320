@@ -1,0 +1,33 @@
+<form class="form" action="/foods/edit/{{food._id}}" method="POST">
+    <h2 class="title">Editing {{food.name}} ! </h2>
+    <div class="form-group">
+        <label class="label" for="name">Name</label>
+        <input class="input" id="name" type="text" name="name" value="{{food.name}}">
+    </div>
+
+    <div class=" form-group">
+        <label class="label" for="image">Image</label>
+        <input class="input" id="image" type="text" name="image" value="{{food.image}}">
+    </div>
+
+
+    <div class="form-group">
+        <label class="label" for="price">Price</label>
+        <input class="input" id="price" type="text" name="price" value="{{food.price}}">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="type">Type</label>
+        <select name="type" id="type">
+            {{!-- <option value="{{food.type}}">Fruit</option> --}}
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetable</option>
+        </select>
+    </div>
+
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+
+    <button class="btn">Submit</button>
+</form>
