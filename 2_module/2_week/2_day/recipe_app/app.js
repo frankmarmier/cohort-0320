@@ -15,6 +15,7 @@ const MongoStore = require("connect-mongo")(session);
 
 const app = express(); // Express Framework
 
+
 /**** App Setup */
 app.set("view engine", "hbs"); // Set the default view engine. Rendered views won't require the .hbs extension
 hbs.registerPartials(path.join(__dirname, "views", "partials")); // Register the location of your partials for hbs

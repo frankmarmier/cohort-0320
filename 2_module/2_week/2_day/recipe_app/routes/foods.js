@@ -3,7 +3,7 @@ const router = new express.Router();
 const Food = require("../models/food");
 const flash = require("connect-flash");
 const requireAuth = require("../middlewares/requireAuth");
-
+const protectedRoute = require("../middlewares/requireAdmin");
 // Read
 router.get("/foods", (req, res) => {
   Food.find({})
@@ -18,7 +18,7 @@ router.get("/foods", (req, res) => {
     });
 });
 
-router.get("/foods/create", requireAuth, (req, res) => {
+router.get("/foods/create", requireAuth, protectedRoute(["some other access","pm"]), (req, res) => {
   res.render("foods/createFood.hbs", {
     css: ["form.css"],
   });
