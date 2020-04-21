@@ -1,0 +1,17 @@
+{{#if success}}
+    {{success}}
+{{/if}}
+
+
+{{#each recipes}}
+<h3>{{this.title}}</h3>
+<p>{{this.duration}}</p>
+<p>{{this.cuisine}}</p>
+<p>{{this.level}}</p>
+<ul>
+    {{#each this.ingredients}}
+    <li>{{this.name}}</li>
+    {{/each}}
+</ul>
+<hr>
+{{/each}}

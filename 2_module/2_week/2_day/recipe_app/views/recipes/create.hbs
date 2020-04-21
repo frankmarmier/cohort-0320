@@ -1,0 +1,46 @@
+<form class="form" action="/recipes/create" method="POST">
+
+    {{#if success}}
+    <p>You recipe has been successfully create...</p>
+    {{/if}}
+
+    {{#if error}}
+    <p>An error occured while creating the recipe</p>
+    {{/if}}
+
+    <h2 class="title">Create food !</h2>
+    <div class="form-group">
+        <label class="label" for="title">Title</label>
+        <input class="input" id="title" type="text" name="title" value="Hello">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="level">Level</label>
+        <select name="level" id="level">
+            <option value="Easy Peasy">Easy Peasy</option>
+            <option value="Amateur Chef">Amateur Chef</option>
+            <option value="UltraPro Chef">UltraPro Chef</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+
+        {{#each foods}}
+        <label class="label" for="{{this.name}}">{{this.name}}</label>
+        <input type="checkbox" id="{{this.name}}" name="ingredients" value="{{this._id}}">
+        {{/each}}</div>
+
+    <div class=" form-group">
+
+        <label class="label" for="cuisine">Cuisine</label>
+        <input class="input" id="cuisine" type="text" name="cuisine">
+
+    </div>
+
+    <div>
+        <label class="label" for="duration">Duration</label>
+        <input class="input" id="duration" type="number" name="duration">
+    </div>
+
+    <button class="btn">Submit</button>
+</form>
