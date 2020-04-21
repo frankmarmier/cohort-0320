@@ -1,3 +1,8 @@
+@import "./foods.css";
+@import "./form.css";
+@import "./navbar.css";
+@import "./table.css";
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap");
 * {
   box-sizing: border-box;
@@ -22,11 +27,18 @@ a {
   padding: 40px 60px;
 }
 
-.link {
+.nav-link {
   cursor: pointer;
+}
+.nav.link:hover {
+  color: dodgerblue;
+  border-bottom: 1px solid;
+}
+
+.link {
+  color: dodgerblue;
 }
 
 .link:hover {
-  color: dodgerblue;
-  border-bottom: 1px solid;
+  color: salmon;
 }

@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     .then((dbResult) => {
       res.render("recipes/allRecipes.hbs", {
         recipes: dbResult,
-        success: req.flash.flash("toto"),
+        success: req.flash("toto"),
       });
     })
     .catch((dbErr) => {

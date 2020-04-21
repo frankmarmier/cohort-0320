@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const Food = require("../models/food");
 const flash = require("connect-flash");
+const requireAuth = require("../middlewares/requireAuth");
 
 // Read
 router.get("/foods", (req, res) => {
@@ -17,14 +18,14 @@ router.get("/foods", (req, res) => {
     });
 });
 
-router.get("/foods/create", (req, res) => {
+router.get("/foods/create", requireAuth, (req, res) => {
   res.render("foods/createFood.hbs", {
     css: ["form.css"],
   });
 });
 
 // Create
-router.post("/foods", (req, res) => {
+router.post("/foods", requireAuth, (req, res) => {
   // console.log(req.body);
   // console.log("Inside foods post routes....");
   Food.create(req.body)
@@ -46,7 +47,7 @@ router.post("/foods", (req, res) => {
     });
 });
 
-router.get("/foods/manage", (req, res) => {
+router.get("/foods/manage", requireAuth, (req, res) => {
   Food.find({})
     .then((dbResult) => {
       res.render("foods/manage.hbs", {
@@ -60,7 +61,7 @@ router.get("/foods/manage", (req, res) => {
 });
 
 // Delete
-router.get("/foods/delete/:id", (req, res) => {
+router.get("/foods/delete/:id", requireAuth, (req, res) => {
   console.log("Here...");
   Food.findByIdAndDelete(req.params.id)
     .then((dbResult) => {
@@ -71,12 +72,12 @@ router.get("/foods/delete/:id", (req, res) => {
     });
 });
 
-router.get("/foods/edit/:id", (req, res) => {
+router.get("/foods/edit/:id", requireAuth, (req, res) => {
   Food.findById(req.params.id)
     .then((dbResult) => {
       res.render("foods/editFood.hbs", {
         food: dbResult,
-        error: "",
+        error: req.flash("error"),
         css: ["form.css"],
       });
     })
@@ -85,23 +86,12 @@ router.get("/foods/edit/:id", (req, res) => {
     });
 });
 
-router.post("/foods/edit/:id", (req, res) => {
+router.post("/foods/edit/:id", requireAuth, (req, res) => {
   // console.log(req.params.id);
   // console.log(req.body);
   if (req.body.name === "" || req.body.image === "" || req.body.price === "") {
     req.flash("error", "Fill in everything please");
     res.redirect(`/foods/edit/${req.params.id}`);
-    // Food.findById(req.params.id)
-    //   .then((dbResult) => {
-    //     res.render("foods/editFood.hbs", {
-    //       food: dbResult,
-    //       error: "You have to enter all the fields...",
-    //       css: ["form.css"],
-    //     });
-    //   })
-    //   .catch((dbErr) => {
-    //     console.log(dbErr);
-    //   });
   } else {
     Food.findByIdAndUpdate(req.params.id, req.body, { new: true })
       .then((dbResult) => {

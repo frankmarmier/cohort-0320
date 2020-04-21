@@ -1,11 +1,13 @@
 <nav class="nav-bar">
     <ul class="nav-list">
-        <li><a class="link" href="/">Home</a> | </li>
-        <li><a class="link" href="/recipes">Recipes</a> | </li>
-        <li><a class="link" href="/foods">Foods</a> | </li>
-        <li><a class="link" href="/foods/create">Create food</a> | </li>
-        <li><a class="link" href="/foods/manage">Manage food</a> | </li>
-        <li><a class="link" href="/recipes/create">Create recipe</a> | </li>
-        <li><a class="link" href="/recipes/manage">Manage recipe</a></li>
+        <li><a class="nav-link" href="/">Home</a> | </li>
+        <li><a class="nav-link" href="/recipes">Recipes</a> | </li>
+        <li><a class="nav-link" href="/foods">Foods</a> | </li>
+
+        {{#if isLoggedIn}}
+        <li><a class="nav-link" href="/auth/logout">Logout</a></li>
+        {{else}}
+        <li><a class="nav-link" href="/auth/signin">Signin</a></li>
+        {{/if}}
     </ul>
 </nav>

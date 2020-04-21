@@ -7,7 +7,7 @@ const recipeSchema = new Schema({
     type: String,
     enum: ["Easy Peasy", "Amateur Chef", "UltraPro Chef"],
   },
-  ingredients: [{ type: Schema.Types.ObjectId, ref: "Food" }],
+  ingredients: [{ type: Schema.Types.Object, ref: "Food" }],
   cuisine: { type: String, required: true },
   image: {
     type: String,

@@ -1,0 +1,24 @@
+<form autocomplete="off" class="form" method="POST" action="/auth/signup">
+    <h2 class="title">Signup</h2>
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+
+    <div class="form-group">
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" type="text" name="email" required value="toto@gmail.com">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="password">Password</label>
+        <input class="input" id="password" type="password" name="password" required value="1234">
+    </div>
+
+    <div class="form-group">
+        <label class="label" for="avatar">Avatar</label>
+        <input class="input" id="avatar" type="text" name="avatar">
+    </div>
+
+    <p>Already have an account ? <a class="link" href="/auth/signin">Signin</a> !</p>
+    <button class="btn">Submit</button>
+</form>
