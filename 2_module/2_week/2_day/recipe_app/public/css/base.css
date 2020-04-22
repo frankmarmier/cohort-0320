@@ -42,3 +42,15 @@ a {
 .link:hover {
   color: salmon;
 }
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 10px;
+}
+
+.recipe {
+  padding: 10px 16px;
+  border: 1px solid black;
+  border-radius: 4px;
+}

@@ -1,17 +1,22 @@
 {{#if success}}
-    {{success}}
+{{success}}
 {{/if}}
 
-
-{{#each recipes}}
-<h3>{{this.title}}</h3>
-<p>{{this.duration}}</p>
-<p>{{this.cuisine}}</p>
-<p>{{this.level}}</p>
-<ul>
-    {{#each this.ingredients}}
-    <li>{{this.name}}</li>
-    {{/each}}
-</ul>
-<hr>
-{{/each}}
+<section>
+    <h2>Recipes</h2>
+    <div class="recipes">
+        {{#each recipes}}
+        <article class="recipe">
+            <h3>{{this.title}}</h3>
+            <p>{{this.duration}}</p>
+            <p>{{this.cuisine}}</p>
+            <p>{{this.level}}</p>
+            <ul>
+                {{#each this.ingredients}}
+                <li>{{this.name}}</li>
+                {{/each}}
+            </ul>
+        </article>
+        {{/each}}
+    </div>
+</section>

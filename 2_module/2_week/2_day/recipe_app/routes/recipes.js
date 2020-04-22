@@ -49,7 +49,7 @@ router.post("/create", (req, res) => {
     });
 });
 
-router.get("/manage", (req, res) => {});
+
 
 // Delete
 router.get("/delete/:id", (req, res) => {

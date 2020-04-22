@@ -47,9 +47,17 @@ app.use(flash()); // Flash will expose a flash() function on the request object.
 // This function is useful to pass information from one route to another.
 // The data is stored only for the time of the request.
 
-app.use((req, res, next) => {
-  console.log(req.session.currentUser, "----- user session");
+// Custom middleware that checks in the session if key "currentSession" exists.
+// When logging in it is an object referencing the logged in user.
+app.use((req, res, next) => {    
+  // console.log(req.session.currentUser, "----- user session");
+  // we defined this key inside router.post("/signin").
   if (req.session.currentUser) {
+    // res.locals.YOURVARIABLE is a way to define variables accessible
+    // to the template (hbs) during the request / response cycle.
+    // We can reference this variable in our template, it allows us to 
+    // Know if a user is loggedIn, can be used to do render certain parts of the layout :)
+    res.locals.user = req.session.currentUser // Allows us to access user info with the user key in the template
     res.locals.isLoggedIn = true;
   } else {
     res.locals.isLoggedIn = false;
@@ -57,16 +65,27 @@ app.use((req, res, next) => {
   next();
 });
 
-app.locals.title = "pp";
+app.locals.title = "pp"; // app.locals.YOURVARIABLE allows you to access
+                        // YOURVARIABLE on any template.
 
 // Routes configuration
 
 app.use("/", require("./routes/baseRoutes"));
+app.use("/", require("./routes/user"));
 app.use("/", require("./routes/foods"));
 app.use("/recipes", require("./routes/recipes"));
 app.use("/auth", require("./routes/auth"));
 
 // Error handling routes...
+
+app.use((req,res,next) => {
+  res.render("not_found.hbs")
+})
+
+app.use((err,req,res,next) => {
+  console.log(err);
+  res.render("error.hbs")
+})
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on http://localhost:${process.env.PORT}`);
