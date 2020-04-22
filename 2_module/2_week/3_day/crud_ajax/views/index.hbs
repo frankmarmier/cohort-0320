@@ -1,0 +1,20 @@
+<h2>AJAX</h2>
+
+
+
+
+<input type="text" id="user-input">
+<button id="create-user">Create user</button>
+<button id="btn-edit">Make edit</button>
+
+<button id="get-users">Get them users !</button>
+
+<div id="users-list">
+    {{#each users}}
+    <div class="user">
+        <p contenteditable class="user-name" data-userId="{{this._id}}">{{this.name}}</p>
+        <button class="btn-delete" data-action="delete" data-userId="{{this._id}}">Delete</button>
+        <button data-userId="{{this._id}}" class="btn-set-edit">Edit</button>
+    </div>
+    {{/each}}
+</div>
