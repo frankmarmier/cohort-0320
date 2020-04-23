@@ -1,0 +1,15 @@
+.foods {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foods .food {
+  margin: 10px;
+  max-width: 300px;
+}
+
+.foods .food img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}

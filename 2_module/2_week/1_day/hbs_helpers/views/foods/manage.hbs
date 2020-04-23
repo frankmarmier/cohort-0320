@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Type</th>
+        <th>Actions</th>
+    </thead>
+
+    <tbody>
+        {{#each foods}}
+        <tr>
+            <td><img src="{{this.image}}" /></td>
+            <td>{{this.name}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.type}}</td>
+            <td> <a href="/foods/edit/{{this._id}}">Edit</a>/ <a class="link"
+                    href="/foods/delete/{{this._id}}">Delete</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

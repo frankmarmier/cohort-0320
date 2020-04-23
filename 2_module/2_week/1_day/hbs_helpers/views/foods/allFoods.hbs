@@ -1,0 +1,12 @@
+<section class="foods-display">
+    <h2>List of foods !</h2>
+    <div class="foods">
+        {{#each foods}}
+        <article class="food">
+            <h3>{{this.name}}</h3>
+            <img src="{{this.image}}" alt="">
+            <p>{{this.price}}€</p>
+        </article>
+        {{/each}}
+    </div>
+</section>
