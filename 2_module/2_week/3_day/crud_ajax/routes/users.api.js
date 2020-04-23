@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
       res.status(200).json(dbResult);
     })
     .catch((dbErr) => {
-      console.log(dbErr);
+      res.status(500).json({ message: "An error occured" });
     });
 });
 
@@ -32,7 +32,11 @@ router.post("/", (req, res) => {
 router.delete("/:id", (req, res) => {
   User.findByIdAndDelete(req.params.id)
     .then((dbResult) => {
-      res.status(200).json({ message: "Everything went ok.." });
+      // dbResult// null
+      if (!dbResult) {
+        return res.status(404).json({ message: "Not Found" });
+      }
+      res.status(200).json(dbResult);
     })
     .catch((dbErr) => {
       console.log(dbErr);

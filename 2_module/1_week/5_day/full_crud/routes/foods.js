@@ -1,6 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const Food = require("../models/food");
+const flash = require("connect-flash");
 
 // Read
 router.get("/foods", (req, res) => {
@@ -24,7 +25,7 @@ router.get("/foods/create", (req, res) => {
 
 // Create
 router.post("/foods", (req, res) => {
-  // console.log(req.body);
+  console.log(req.body);
   // console.log("Inside foods post routes....");
   Food.create(req.body)
     .then((dbResult) => {
@@ -88,17 +89,19 @@ router.post("/foods/edit/:id", (req, res) => {
   // console.log(req.params.id);
   // console.log(req.body);
   if (req.body.name === "" || req.body.image === "" || req.body.price === "") {
-    Food.findById(req.params.id)
-      .then((dbResult) => {
-        res.render("foods/editFood.hbs", {
-          food: dbResult,
-          error: "You have to enter all the fields...",
-          css: ["form.css"],
-        });
-      })
-      .catch((dbErr) => {
-        console.log(dbErr);
-      });
+    req.flash("error", "Fill in everything please");
+    res.redirect(`/foods/edit/${req.params.id}`);
+    // Food.findById(req.params.id)
+    //   .then((dbResult) => {
+    //     res.render("foods/editFood.hbs", {
+    //       food: dbResult,
+    //       error: "You have to enter all the fields...",
+    //       css: ["form.css"],
+    //     });
+    //   })
+    //   .catch((dbErr) => {
+    //     console.log(dbErr);
+    //   });
   } else {
     Food.findByIdAndUpdate(req.params.id, req.body, { new: true })
       .then((dbResult) => {

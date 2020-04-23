@@ -19,15 +19,11 @@
     <div class="form-group">
         <label class="label" for="type">Type</label>
         <select name="type" id="type">
-            {{!-- <option value="{{food.type}}">Fruit</option> --}}
-            <option value="fruit">Fruit</option>
-            <option value="vegetable">Vegetable</option>
+
+            {{!-- <option {{#isSelected food.type "vegetable"}}{{/isSelected}} value="vegetable">Vegetable</option> --}}
+
         </select>
     </div>
-
-    {{#if error}}
-    <p>{{error}}</p>
-    {{/if}}
 
     <button class="btn">Submit</button>
 </form>

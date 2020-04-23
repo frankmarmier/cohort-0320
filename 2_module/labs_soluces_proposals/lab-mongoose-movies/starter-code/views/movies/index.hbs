@@ -1,0 +1,14 @@
+<h2 class="home-link"><a href="/"><i class="fas fa-home"></i></a></h2>
+<main class="page">
+  <h3 class="title-create">Add a movie <a href="/movies/create"><i class="fas fa-plus"></i></a></h3>
+  <div class="movies">
+
+    {{#each movies}}
+    <div class="movie">
+      <h2>{{this.title}}</h2>
+      <p>{{this.genre}}</p>
+      <a class="link" href="/movies/{{this._id}}">See details</a>
+    </div>
+    {{/each}}
+  </div>
+</main>

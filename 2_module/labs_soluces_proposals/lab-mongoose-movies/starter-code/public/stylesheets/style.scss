@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(53, 54, 58);
+  color: white;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  margin-bottom: 100px;
+  display: flex;
+}
+
+.nav .nav-link {
+  font-size: 50px;
+  display: block;
+  background-color: whitesmoke;
+  padding: 12px 24px;
+  margin: 10px;
+  color: black;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.nav .nav-link:hover {
+  background-color: black;
+  color: white;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, (minmax(400px, 1fr)));
+  gap: 20px;
+}
+
+.page {
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.movies .movie > * {
+  margin-bottom: 20px;
+}
+
+.movies .movie {
+  display: flex;
+  flex-direction: column;
+}
+
+.movies .movie .link {
+  background-color: ghostwhite;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+}
+
+.movie-detail {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.movie-detail > * {
+  margin: 30px;
+}
+
+.home-link {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.celebrity {
+  font-size: 3rem;
+  display: block;
+  padding: 40px;
+  border: 1px solid white;
+  margin: 10px;
+}
+
+.celebrity-detail > * {
+  margin-bottom: 20px;
+}
+
+.celebrity-detail .name {
+  font-size: 4rem;
+}
+
+.celebrity-detail .occupation {
+  font-size: 3.25rem;
+}
+
+.celebrity-detail .catch-phrase {
+  font-size: 2.25rem;
+  font-style: italic;
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > * + * {
+  margin-bottom: 20px;
+}
+
+.form .title {
+  margin-bottom: 30px;
+  font-size: 2.25rem;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input,
+select,
+textarea {
+  max-width: 360px;
+}
+
+.form input,
+textarea {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.form label {
+  font-size: 1.25rem;
+}
+
+.form .btn-submit {
+  padding: 10px 20px;
+  font-size: 16px;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.title-create {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}

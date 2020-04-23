@@ -1,0 +1,11 @@
+<h2 class="home-link"><a href="/"><i class="fas fa-home"></i></a></h2>
+<main class="page">
+  <h3 class="title-create">Add a celebrity <a href="/celebrities/create"><i class="fas fa-plus"></i></a></h3>
+  <div class="celebrities">
+    {{#each celebrities}}
+    <a class="celebrity" href="/celebrities/{{this._id}}">
+      <h3>{{this.name}}</h3>
+    </a>
+    {{/each}}
+  </div>
+</main>
