@@ -1,0 +1,23 @@
+{{!-- <article class="beer-showcase"> --}}
+{{#if @root.displayDetails}}
+<article class="beer-showcase">
+    {{else}}
+    <article class="beer">
+        {{/if}}
+        <img class="image" src="{{this.image_url}}" alt="beer">
+        <div class="product-info">
+            <h2 class="title">{{this.name}}</h2>
+            <p class="tagline">{{this.tagline}}</p>
+            <p class="description">{{this.description}}</p>
+
+            {{#if @root.displayDetails}}
+            <p><span class="info"> Food Pairing</span></p>
+            <ul class="list">
+                {{#each this.food_pairing}}
+                <li class="list-item">{{this}}</li>
+                {{/each}}
+            </ul>
+            <p><span class="info">Brewer tips:</span> {{this.brewers_tips}}</p>
+            {{/if}}
+        </div>
+    </article>
