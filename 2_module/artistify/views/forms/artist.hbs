@@ -1,0 +1,20 @@
+<form action="/artists/create" method="post" class="form">
+    <h1 class="title">Create artist</h1>
+
+    <label class="label" for="name">name</label>
+    <input class="input" id="name" type="text" name="name" value="test artist">
+
+    <label class="label" for="description">description</label>
+    <textarea class="input" id="description" type="text" name="description">description test
+    </textarea>
+
+    <label class="label">is band ?</label>
+    <div class="row">
+        <label for="is-band">yes</label>
+        <input id="is-band" type="radio" name="isBand" value="yes">
+        <label for="is-not-band">no</label>
+        <input id="is-not-band" type="radio" name="isBand" value="no" checked>
+    </div>
+    <button class="btn">ok</button>
+    {{!-- <input class="btn" type="submit" value="ok"> --}}
+</form>

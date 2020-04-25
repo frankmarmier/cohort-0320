@@ -1,0 +1,41 @@
+<h1 class="title">Edit Album</h1>
+<form method="post" action="/albums/update/{{album._id}}" class="form">
+
+    <label for="title">title</label>
+    <input class="input" id="title" name="title" type="text" value="{{album.title}}">
+    <label for="artist">artist</label>
+
+    <input class="input" id="artist" list="artists" name="artist" value="{{album.artist.id}}" />
+
+    <datalist id="artists">
+        {{#each artists}}
+        {{#compare this.name ../album.artist.name operator="===" }}
+        <option value="{{this._id}}" selected>{{this.name}}</option>
+        {{/compare }}
+        {{#compare this.name ../album.artist.name operator="!=" }}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/compare }}
+        {{/each}}
+    </datalist>
+
+    <label for="label">label</label>
+    <select name="label" id="label" class="input" required>
+        {{#each labels}}
+        {{#compare this.name ../album.label.name operator="===" }}
+        <option value="{{this._id}}" selected>{{this.name}}</option>
+        {{/compare }}
+        {{#compare this.name ../album.label.name operator="!=" }}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/compare }}
+        {{/each}}
+    </select>
+
+    <label for="cover">cover</label>
+    <input class="input" id="cover" name="cover" type="text" value="{{album.cover}}">
+    <div class="album">
+        <img class="cover" src="{{album.cover}}" alt="">
+    </div>
+    <label for="releaseDate">releaseDate</label>
+    <input class="input" id="releaseDate" name="releaseDate" type="date" value="{{format-date album.releaseDate ''}}">
+    <button class="btn">edit !</button>
+</form>

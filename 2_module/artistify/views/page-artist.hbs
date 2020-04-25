@@ -1,0 +1,11 @@
+<h1>{{artist.name}}</h1>
+<hr>
+<p> {{artist.description}}</p>
+<hr>
+<ul>
+    {{#each albums}}
+    <li>
+        <a class="link" href="/album/{{this._id}}">{{this.title}}</a>
+    </li>
+    {{/each}}
+</ul>

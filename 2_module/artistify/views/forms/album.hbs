@@ -1,0 +1,28 @@
+<form method="post" action="/albums/create" class="form page">
+
+    <h1 class="title">Create new Album</h1>
+
+    <label for="title">title</label>
+    <input class="input" id="title" name="title" type="text" required value="test album">
+
+    <label for="artist">artist</label>
+    <select name="artist" id="artist" class="input" required>
+        {{#each artists}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+    <label for="label">label</label>
+    <select name="label" id="label" class="input">
+        {{#each labels}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+    <label for="cover">cover</label>
+    <input class="input" id="cover" name="cover" type="text">
+
+    <label for="releaseDate">releaseDate</label>
+    <input class="input" id="releaseDate" name="releaseDate" type="date" value="2020-02-04">
+    <button class="btn">create !</button>
+</form>

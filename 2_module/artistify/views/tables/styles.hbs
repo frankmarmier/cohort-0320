@@ -1,0 +1,48 @@
+<h1 class="title">Manage Styles (AJAX)</h1>
+<table id="table-styles" class="table">
+    <thead class="head">
+        <tr>
+            <th colspan="4">
+                <div id="form-create-style" class="form">
+                    <input class="input" id="name" name="name" type="text" placeholder="name">
+                    <input class="input" id="wikiURL" name="wikiURL" type="text" placeholder="wiki URL">
+                    <button id="btn-create-style" class="btn">create</button>
+                    <button id="btn-update-style" class="btn is-hidden">update</button>
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody id="table-style-body" class="body">
+
+        {{#unless styles}}
+        <tr id="no-result-yet">
+            <td colspan="4">no styles yet</td>
+        </tr>
+        {{/unless}}
+
+        {{#each styles}}
+        <tr id="style-{{this._id}}" class="row">
+            <td class="name">{{this.name}}</td>
+            <td class="wiki">
+                {{#compare this.wikiURL '' operator="==="}}
+                <i class="fa fa-unlink"></i>
+                {{/compare}}
+                {{#compare this.wikiURL '' operator="!="}}
+                <a class="wikiURL" href="{{this.wikiURL}}" target="_blank">
+                    <i class="fa fa-link"></i>
+                </a>
+                {{/compare}}
+            </td>
+            <td>
+                {{!-- Caution: AJAX ACTION for edit link !!!! --}}
+                {{!-- check public/js/table-styles.js --}}
+                <i data-style-id="{{this._id}}" class="is-clickable update fas fa-pen"></i>
+            </td>
+            <td>
+                <i data-style-id="{{this._id}}" class="is-clickable delete fa fa-times"></i>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
