@@ -1,0 +1,16 @@
+- Shopping Cart
+    * Make it AJAX.
+    * Size.
+    * Number of items.
+    * Total amount.
+    * Design.
+
+- Navbar
+    * Mobile Navbar
+
+- Products
+    * Fix layout when making AJAX call.
+
+- Helpers
+    * Make a revision.
+
