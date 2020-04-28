@@ -10,7 +10,7 @@ router.get("/foods", (req, res) => {
     .then((dbResult) => {
       res.render("foods/allFoods.hbs", {
         foods: dbResult,
-        css: ["foods.css"],
+        scripts: ["main.js"]
       });
     })
     .catch((err) => {
