@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+}
+
+.border {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
