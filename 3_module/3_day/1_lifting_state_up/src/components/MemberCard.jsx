@@ -1,23 +1,25 @@
 import React from "react";
 
-const MemberCard = ({ index, member, handleChange }) => {
+const MemberCard = ({ index, member, clbk }) => {
+  // console.log(clbk);
   return (
-    <div className="MemberCard">
+                                  //raccoon
+                                // MemberCard team-racoon
+    <div className={`MemberCard team-${member.team}`}>
       <h3>{member.name}</h3>
       <label htmlFor="">Team racoon</label>
       <input
         type="radio"
         value="racoon"
         checked={member.team === "racoon"}
-        onChange={(event) => handleChange(index, event)}
+        onChange={(event) => clbk(event, index)}
       />
-
       <label htmlFor="">Team honey-badger</label>
       <input
         type="radio"
         value="honey-badger"
         checked={member.team === "honey-badger"}
-        onChange={(event) => handleChange(index, event)}
+        onChange={(event) => clbk(event, index)}
       />
     </div>
   );
