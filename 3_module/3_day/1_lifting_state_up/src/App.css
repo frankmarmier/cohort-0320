@@ -1,0 +1,21 @@
+.App {
+  padding: 80px;
+}
+
+.Teams {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.MemberCard {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.MemberCard > * {
+  margin-bottom: 20px;
+}
