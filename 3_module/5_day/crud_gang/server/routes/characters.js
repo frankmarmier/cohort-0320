@@ -36,7 +36,7 @@ router.post("/api/characters", (req, res, next) => {
 
 router.patch("/api/characters/:id", (req, res, next) => {
   // Validate req body before updating maybe ?
-  Character.findByIdAndUpdate(req.params.id, req.body)
+  Character.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((characterDocument) => {
       res.status(200).json(characterDocument);
     })
@@ -48,7 +48,12 @@ router.patch("/api/characters/:id", (req, res, next) => {
 router.delete("/api/characters/:id", (req, res, next) => {
   Character.findByIdAndRemove(req.params.id)
     .then((characterDocument) => {
-      res.status(204).json(characterDocument);
+      console.log(characterDocument);
+      if (characterDocument === null) {
+        res.status(404).json({ message: "Character not found" });
+      } else {
+        res.status(204).json(characterDocument);
+      }
     })
     .catch((error) => {
       res.status(500).json(error);
