@@ -36,9 +36,20 @@ function post(endPoint, data) {
   return service.post(endPoint, data);
 }
 
+function patch(endPoint, data) {
+  return service.patch(endPoint, data);
+}
+
+function remove(endPoint) {
+  return service.delete(endPoint);
+}
+
 export default {
   get,
   post,
+  remove,
+  patch,
+
   //   get: function (endPoint) {
   //     return service.get(endPoint);
   //   },

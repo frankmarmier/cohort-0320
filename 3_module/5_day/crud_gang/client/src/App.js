@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import CharactersPage from "./pages/CharactersPage";
 import NavMain from "./components/NavMain";
 import CharacterForm from "./components/CharacterForm";
-
+import Dashboard from "./pages/Dashboard";
 import "./App.css";
 
 function App(props) {
@@ -15,6 +15,7 @@ function App(props) {
         <Route exact path="/" component={Home} />
         <Route exact path="/characters" component={CharactersPage} />
         <Route path="/characters/new" component={CharacterForm} />
+        <Route path="/characters/manage" component={Dashboard} />
       </Switch>
     </div>
   );

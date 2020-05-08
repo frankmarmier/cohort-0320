@@ -6,3 +6,7 @@
 .CharacterCard .picture {
   width: 64px;
 }
+
+.CharacterTable .picture {
+  max-width: 64px;
+}

@@ -1,39 +1,32 @@
 import React from "react";
 import apiHandler from "../apiHandler/apiHandler";
 
-class CharacterForm extends React.Component {
+class CharacterEditForm extends React.Component {
   state = {
-    name: "",
-    side: "super-hero",
-    bio: "",
+    name: this.props.character.name,
+    side: this.props.character.side,
+    bio: this.props.character.bio,
+    id: this.props.character._id,
     sides: [],
   };
 
   handleChange = (event) => {
-    // console.log(event.target.name);
-    let value;
-    if (event.target.type === "file") {
-      value = event.target.files[0];
-    } else {
-      value = event.target.value;
-    }
-    this.setState({ [event.target.name]: value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   handleForm = (event) => {
     event.preventDefault();
 
-    const fd = new FormData();
-
-    fd.append("name", this.state.name);
-    fd.append("side", this.state.side);
-    fd.append("picture", this.state.picture);
-    fd.append("bio", this.state.bio);
-
     apiHandler
-      .post("/api/characters", fd)
+      .patch("/api/characters/" + this.state.id, {
+        name: this.state.name,
+        side: this.state.side,
+        bio: this.state.bio,
+      })
       .then((apiResponse) => {
-        this.props.history.push("/characters");
+        console.log(apiResponse.data);
+        this.props.updateCharacter(apiResponse.data);
+        // this.props.history.push("/characters");
       })
       .catch((apiError) => {
         console.log(apiError.response.data.message);
@@ -41,11 +34,17 @@ class CharacterForm extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <form onChange={this.handleChange} onSubmit={this.handleForm}>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            defaultValue={this.props.character.name}
+          />
         </div>
 
         <div>
@@ -55,7 +54,7 @@ class CharacterForm extends React.Component {
             name="side"
             id="side"
             onChange={this.handleChange}
-            value={this.state.sides[0]}
+            value={this.props.character.side}
           >
             <option value="super-hero">Super hero</option>
             <option value="villain">Villain</option>
@@ -64,12 +63,12 @@ class CharacterForm extends React.Component {
 
         <div>
           <label htmlFor="bio">Bio</label>
-          <input type="text" id="bio" name="bio" />
-        </div>
-
-        <div>
-          <label htmlFor="picture">Picture</label>
-          <input type="file" id="picture" name="picture" />
+          <input
+            type="text"
+            id="bio"
+            name="bio"
+            defaultValue={this.props.character.bio}
+          />
         </div>
 
         <button>Submit</button>
@@ -78,4 +77,4 @@ class CharacterForm extends React.Component {
   }
 }
 
-export default CharacterForm;
+export default CharacterEditForm;

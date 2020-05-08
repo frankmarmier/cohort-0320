@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Character = require("../models/Character");
-
+const upload = require("../config/cloudinaryConfig");
 router.get("/api/characters", (req, res, next) => {
   Character.find()
     .then((characterDocuments) => {
@@ -23,9 +23,16 @@ router.get("/api/characters/:id", (req, res, next) => {
     });
 });
 
-router.post("/api/characters", (req, res, next) => {
+router.post("/api/characters", upload.single("picture"), (req, res, next) => {
   // Validate req body before creating.
-  Character.create(req.body)
+  const { name, bio, side } = req.body;
+  // You should really validate here
+  const newCharacter = { name, bio, side };
+  if (req.file) {
+    newCharacter.picture = req.file.secure_url;
+  }
+
+  Character.create(newCharacter)
     .then((characterDocument) => {
       res.status(201).json(characterDocument);
     })
