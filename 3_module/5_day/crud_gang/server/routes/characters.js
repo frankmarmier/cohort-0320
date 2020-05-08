@@ -48,7 +48,6 @@ router.patch("/api/characters/:id", (req, res, next) => {
 router.delete("/api/characters/:id", (req, res, next) => {
   Character.findByIdAndRemove(req.params.id)
     .then((characterDocument) => {
-      console.log(characterDocument);
       if (characterDocument === null) {
         res.status(404).json({ message: "Character not found" });
       } else {
