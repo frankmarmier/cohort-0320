@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import ClassCounter from "../Components/ClassCounter";
 import HookCounter from "../Components/HookCounter";
-// import Button from "../Components/Button";
+import Container from "../Components/Container";
+import Button from "../Components/Button";
 
-const Intro = props => {
+const Intro = (props) => {
   const [toggleClass, setToggleClass] = useState(false);
   const [toggleHook, setToggleHook] = useState(false);
 
@@ -16,16 +17,18 @@ const Intro = props => {
   }
 
   return (
-    <section className="container">
+    <Container>
       <h1 className="title">Intro Page</h1>
       <div className="text-align-center"></div>
-      <button onClick={handleClassToggle}>Display class</button>
-      <button onClick={handleHookToggle}>Display hook</button>
+      <Button type="danger" onClick={handleClassToggle}>
+        Display class
+      </Button>
+      <Button type="success" onClick={handleHookToggle}>Display hook</Button>
       <div className="counters">
         {toggleClass && <ClassCounter />}
         {toggleHook && <HookCounter />}
       </div>
-    </section>
+    </Container>
   );
 };
 
