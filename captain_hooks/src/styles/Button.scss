@@ -1,0 +1,30 @@
+.Button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  &--primary {
+    background-color: #90caf9;
+    color: rgb(73, 73, 73);
+  }
+
+  &--success {
+    background: #56ab2f;
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+    color: rgb(37, 37, 37);
+  }
+
+  &--danger {
+    background: #cb2d3e;
+    background: -webkit-linear-gradient(to left, #ef473a, #cb2d3e);
+    background: linear-gradient(to left, #ef473a, #cb2d3e);
+    color: ghostwhite;
+  }
+}
