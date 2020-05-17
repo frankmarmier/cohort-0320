@@ -6,11 +6,6 @@
       "description": "React official documentation on Hooks"
     },
     {
-      "url": "https://reactjs-hooks.netlify.com/docs/hello-world.html",
-      "title": "Unofficial React Hooks Documentation",
-      "description": "React documentation transformed in hooks, cf: Main Concepts"
-    },
-    {
       "url": "https://overreacted.io/a-complete-guide-to-useeffect/",
       "title": "React useEffect by Dan Abramov",
       "description": "React core developer Dan Abramov explains useEffect in details"
