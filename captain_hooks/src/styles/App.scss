@@ -17,3 +17,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button,
+input[type="button"],
+input[type="submit"] a {
+  cursor: pointer;
+}

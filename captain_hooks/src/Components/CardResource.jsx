@@ -1,20 +1,13 @@
 import React from "react";
+import Card, { Title, Content, Link } from "./Card";
 
 const CardResource = ({ url, description, title }) => {
   return (
-    <aside className="resource">
-      <h3 className="resource__title">{title}</h3>
-      <hr />
-      <p className="resource__description">{description}</p>
-      <a
-        className="resource__link"
-        rel="noopener noreferrer"
-        target="_blank"
-        href={url}
-      >
-        Go to
-      </a>
-    </aside>
+    <Card>
+      <Title>{title}</Title>
+      <Content>{description}</Content>
+      <Link url={url}>Go to</Link>
+    </Card>
   );
 };
 
