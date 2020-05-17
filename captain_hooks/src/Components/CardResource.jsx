@@ -1,13 +1,20 @@
 import React from "react";
-import Card, { Title, Content, Link } from "./Card";
+import Card, { Title, Content } from "./Card";
+import "../styles/CardResource.scss";
 
 const CardResource = ({ url, description, title }) => {
   return (
-    <Card>
-      <Title>{title}</Title>
-      <Content>{description}</Content>
-      <Link url={url}>Go to</Link>
-    </Card>
+    <a
+      className="CardResource"
+      href={url}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <Card theme="dark">
+        <Title>{title}</Title>
+        <Content>{description}</Content>
+      </Card>
+    </a>
   );
 };
 
