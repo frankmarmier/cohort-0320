@@ -4,9 +4,14 @@
   border-radius: 4px;
   outline: none;
   border: none;
+  width: 100%;
 
   &:active {
     transform: translate(1px, 1px);
+  }
+
+  @media (min-width: 800px) {
+    max-width: 320px;
   }
 
   &--primary {
