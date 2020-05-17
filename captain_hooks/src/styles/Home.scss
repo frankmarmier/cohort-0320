@@ -6,17 +6,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
     url("https://wallpapercave.com/wp/wp3099593.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: $color-secondary;
 
   &__title {
     margin-bottom: 40px;
+    font-weight: 500;
   }
 
   &__resources {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
 }
