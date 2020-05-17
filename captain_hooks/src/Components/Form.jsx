@@ -1,67 +1,80 @@
 import React from "react";
 import { useForm } from "../hooks/useForm";
+import Button from "./Button";
+import "../styles/Form.scss";
 
 const Form = (props) => {
   const { formValues, getInputProps, handleChange } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.log(formValues);
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
-      <div className="form__group">
-        <label htmlFor="firstName">First name</label>
+    <form
+      autoComplete="off"
+      className="Form"
+      onSubmit={handleSubmit}
+      onChange={handleChange}
+    >
+      <h1 className="Form__title">Subscribe</h1>
+      <div className="Form__group">
+        <label className="Form__label" htmlFor="firstName">
+          First name
+        </label>
         <input
-          autoComplete="off"
-          className="form__input"
+          className="Form__input"
           id="firstName"
           type="text"
           {...getInputProps("firstName")}
         />
       </div>
-      <div className="form__group">
-        <label htmlFor="lastName">Last name</label>
+      <div className="Form__group">
+        <label className="Form__label" htmlFor="lastName">
+          Last name
+        </label>
         <input
-          autoComplete="off"
-          className="form__input"
+          className="Form__input"
           id="lastName"
           type="text"
           {...getInputProps("lastName")}
         />
       </div>
-      <div className="form__group">
-        <label htmlFor="email">Email</label>
+      <div className="Form__group">
+        <label className="Form__label" htmlFor="email">
+          Email
+        </label>
         <input
-          autoComplete="off"
-          className="form__input"
+          className="Form__input"
           id="email"
-          type="text"
+          type="email"
           {...getInputProps("email")}
         />
       </div>
-      <div className="form__group">
-        <label htmlFor="password">Password</label>
+      <div className="Form__group">
+        <label className="Form__label" htmlFor="password">
+          Password
+        </label>
         <input
-          autoComplete="off"
-          className="form__input"
+          className="Form__input"
           id="password"
           type="password"
           {...getInputProps("password")}
         />
       </div>
-      <div className="form__group">
-        <label htmlFor="isAdmin">Admin</label>
+      <div className="Form__group">
+        <label className="Form__label" htmlFor="isAdmin">
+          Admin
+        </label>
         <input
-          autoComplete="off"
-          className="form__input"
+          className="Form__input"
           id="isAdmin"
           type="checkbox"
           {...getInputProps("isAdmin")}
         />
       </div>
-      <button className="btn is-success">Submit</button>
+      <Button type="success">Submit</Button>
     </form>
   );
 };
