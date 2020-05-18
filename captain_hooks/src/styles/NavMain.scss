@@ -1,6 +1,8 @@
 @import "variables";
 
 .NavMain {
+  position: sticky;
+  top: 0;
   background-color: $dark;
   color: $color-secondary;
   height: $nav-height;
