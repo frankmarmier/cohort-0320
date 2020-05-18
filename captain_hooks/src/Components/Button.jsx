@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../styles/Button.scss";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "styles/Button.scss";
 
 const Button = ({
   type = "default",

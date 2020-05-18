@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Button from "./Button";
+import Button from "Components/Button";
 
 class ClassCounter extends Component {
   state = {
-    counter: 0
+    counter: 0,
   };
 
-  handleIncrement = e => this.setState({ counter: this.state.counter + 1 });
-  handleDecrement = e => this.setState({ counter: this.state.counter - 1 });
+  handleIncrement = (e) => this.setState({ counter: this.state.counter + 1 });
+  handleDecrement = (e) => this.setState({ counter: this.state.counter - 1 });
 
   render() {
     return (

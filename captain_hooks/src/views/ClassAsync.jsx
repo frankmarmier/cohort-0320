@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import ClassListPokemon from "../Components/ClassListPokemon";
-import ClassPokemon from "../Components/ClassPokemon";
+import ClassListPokemon from "Components/ClassListPokemon";
+import ClassPokemon from "Components/ClassPokemon";
+import Container from "Components/Container";
 
 class UsingAsync extends Component {
   state = {
-    selectedPokemon: ""
+    selectedPokemon: "",
   };
 
-  handleSelectedPokemon = index => {
+  handleSelectedPokemon = (index) => {
     this.setState({ selectedPokemon: index + 1 });
   };
 
   render() {
     return (
-      <section className="container">
+      <Container>
         <h1 className="title">Lets get some Pokemons !</h1>
         <div className="d-flex">
           <ClassListPokemon pokemonHandler={this.handleSelectedPokemon} />
@@ -21,7 +22,7 @@ class UsingAsync extends Component {
             <ClassPokemon selectedPokemon={this.state.selectedPokemon} />
           )}
         </div>
-      </section>
+      </Container>
     );
   }
 }

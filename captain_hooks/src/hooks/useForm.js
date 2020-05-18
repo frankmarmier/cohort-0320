@@ -15,7 +15,7 @@ export function useForm(initialValues = {}) {
         : event.target.value;
     setFormValues({
       ...formValues,
-      [event.target.name]: value
+      [event.target.name]: value,
     });
   }
 
@@ -24,13 +24,13 @@ export function useForm(initialValues = {}) {
       name: fieldName,
       value: formValues[fieldName] || "",
       checked: formValues[fieldName] || false,
-      onChange: handleChange
+      onChange: handleChange,
     };
   }
 
   return {
     formValues,
     getInputProps,
-    handleChange
+    handleChange,
   };
 }

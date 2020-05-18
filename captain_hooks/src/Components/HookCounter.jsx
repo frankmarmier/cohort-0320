@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Button from "./Button";
+import Button from "Components/Button";
 
-const HookCounter = props => {
+const HookCounter = (props) => {
   const [counter, setCounter] = useState(0);
   const [time, setTime] = useState(0);
 
@@ -15,8 +15,8 @@ const HookCounter = props => {
     };
   }, [time]);
 
-  const handleIncrement = e => setCounter(counter + 1);
-  const handleDecrement = e => setCounter(counter - 1);
+  const handleIncrement = (e) => setCounter(counter + 1);
+  const handleDecrement = (e) => setCounter(counter - 1);
 
   return (
     <aside className="card">

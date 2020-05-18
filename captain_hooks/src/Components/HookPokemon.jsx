@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CardPokemon from "./CardPokemon";
-import apiHandler from "../api/apiHandler";
+import CardPokemon from "Components/CardPokemon";
+import apiHandler from "api/apiHandler";
 
 const pokemonAPI = new apiHandler("https://pokeapi.co/api/v2/pokemon");
 
@@ -12,14 +12,14 @@ const HookPokemon = ({ selectedPokemon }) => {
     setLoading(true);
     pokemonAPI
       .get(`/${selectedPokemon}`)
-      .then(res => {
+      .then((res) => {
         //Emulating crappy internet in order to show Loading...
         setTimeout(() => {
           setLoading(false);
           setPokemon(res.data);
         }, 1000);
       })
-      .catch(err => {
+      .catch((err) => {
         setLoading(false);
       });
   }, [selectedPokemon]);

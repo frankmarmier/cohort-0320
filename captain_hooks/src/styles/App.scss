@@ -25,7 +25,10 @@ input[type="submit"] a {
 }
 
 .App {
-  background-color: rgb(0, 1, 10);
+  background: #141e30;
+  background: -webkit-linear-gradient(to top, #243b55, #141e30);
+  background: linear-gradient(to top, #243b55, #141e30);
+  background-attachment: fixed;
   color: ghostwhite;
   min-height: 100vh;
 }

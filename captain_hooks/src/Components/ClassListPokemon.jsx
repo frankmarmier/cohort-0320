@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import apiHandler from "../api/apiHandler";
+import apiHandler from "api/apiHandler";
 
 const pokemonAPI = new apiHandler(
   "https://pokeapi.co/api/v2/pokemon?limit=964"
@@ -9,26 +9,28 @@ class ClassListPokemon extends Component {
   state = {
     pokemons: [],
     isLoading: false,
-    intervalId: null
   };
 
   componentDidMount() {
     this.setState({ isLoading: true });
     pokemonAPI
       .get("/")
-      .then(res => {
+      .then((res) => {
         //Emulating crappy internet in order to show Loading...
-        setTimeout(() => {
-          this.setState({ pokemons: res.data.results, isLoading: false });
+        this.timeoutid = setTimeout(() => {
+          if (this.timeoutid) {
+            this.setState({ pokemons: res.data.results, isLoading: false });
+            clearTimeout(this.timeoutid);
+          }
         }, 1000);
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ isLoading: false });
       });
   }
 
   componentWillUnmount() {
-    clearTimeout(this.state.intervalId);
+    clearTimeout(this.timeoutid);
   }
 
   render() {
@@ -38,7 +40,7 @@ class ClassListPokemon extends Component {
         {this.state.pokemons.map((p, index) => (
           <div
             className="pokemon-name"
-            onClick={e => this.props.pokemonHandler(index)}
+            onClick={(e) => this.props.pokemonHandler(index)}
             key={index}
           >
             {p.name}

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Card.scss";
+import "styles/Card.scss";
 
 export const Title = ({ children }) => {
   return <h2 className="Card__title">{children}</h2>;

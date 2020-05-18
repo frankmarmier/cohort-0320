@@ -1,7 +1,7 @@
 import React from "react";
-import { useForm } from "../hooks/useForm";
-import Button from "./Button";
-import "../styles/Form.scss";
+import { useForm } from "hooks/useForm";
+import Button from "Components/Button";
+import "styles/Form.scss";
 
 const Form = (props) => {
   const { formValues, getInputProps, handleChange } = useForm();

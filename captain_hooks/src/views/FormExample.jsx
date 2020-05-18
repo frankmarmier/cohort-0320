@@ -1,16 +1,11 @@
 import React from "react";
-import Form from "../Components/Form";
-
-const FormExample = props => {
+import Form from "Components/Form";
+import Container from "Components/Container";
+const FormExample = (props) => {
   return (
-    <section className="container">
-      <h1 className="title">React form with hooks</h1>
-      <div className="row justify-content-center">
-        <div className="col-3">
-          <Form />
-        </div>
-      </div>
-    </section>
+    <Container>
+      <Form />
+    </Container>
   );
 };
 

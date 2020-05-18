@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ClassCounter from "../Components/ClassCounter";
-import HookCounter from "../Components/HookCounter";
-import Container from "../Components/Container";
-import Button from "../Components/Button";
+import ClassCounter from "Components/ClassCounter";
+import HookCounter from "Components/HookCounter";
+import Container from "Components/Container";
+import Button from "Components/Button";
 
 const Intro = (props) => {
   const [toggleClass, setToggleClass] = useState(false);

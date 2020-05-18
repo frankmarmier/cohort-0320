@@ -1,6 +1,6 @@
 import React from "react";
-import Card, { Title, Content } from "./Card";
-import "../styles/CardResource.scss";
+import Card, { Title, Content } from "Components/Card";
+import "styles/CardResource.scss";
 
 const CardResource = ({ url, description, title }) => {
   return (
