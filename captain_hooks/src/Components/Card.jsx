@@ -1,8 +1,8 @@
 import React from "react";
 import "styles/Card.scss";
 
-export const Title = ({ children }) => {
-  return <h2 className="Card__title">{children}</h2>;
+export const Title = ({ children, className }) => {
+  return <h2 className={`Card__title ${className || ""}`}>{children}</h2>;
 };
 
 export const SubTitle = ({ children }) => {
