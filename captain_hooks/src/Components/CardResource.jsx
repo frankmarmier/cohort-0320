@@ -11,7 +11,7 @@ const CardResource = ({ url, description, title }) => {
       target="_blank"
     >
       <Card theme="dark">
-        <Title>{title}</Title>
+        <Title className="react-blue">{title}</Title>
         <Content>{description}</Content>
       </Card>
     </a>
