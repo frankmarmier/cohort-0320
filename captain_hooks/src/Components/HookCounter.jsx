@@ -1,41 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "Components/Button";
+import Card, { Title } from "Components/Card";
 
 const HookCounter = (props) => {
   const [counter, setCounter] = useState(0);
-  const [time, setTime] = useState(0);
 
-  useEffect(() => {
-    let intervalId = setInterval(() => {
-      setTime(time + 1);
-    }, 1000);
+  const handleIncrement = (event) => {
+    setCounter(counter + 1);
+  };
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [time]);
+  const handleDecrement = (event) => {
+    setCounter(counter - 1);
+  };
 
-  const handleIncrement = (e) => setCounter(counter + 1);
-  const handleDecrement = (e) => setCounter(counter - 1);
+  /* Hooks also have another syntax to update the value. A function.
+    You receive as paremeter the previous value, the value returned from that
+    function will be the new value
+  */
+
+  // function handleIncrement (event) => {
+  //   setCounter((oldValue) => oldValue + 1);
+  // };
+
+  // const handleDecrement = (event) => {
+  //   setCounter((oldValue) => oldValue - 1);
+  // };
 
   return (
-    <aside className="card">
-      <h1 className="card__title">Time {time}</h1>
+    <Card className="text-align-center m-2" theme="dark">
+      <Title className="h3">Hook Counter</Title>
+
       <hr />
-      <div className="card__controls">
-        <Button
-          handleClick={handleIncrement}
-          sign="plus"
-          isSuccess
-          isFontAwesome
-        />
-        <Button handleClick={handleDecrement} sign="minus" isFontAwesome />
+
+      <div>
+        <Button type="danger" className="m-2" handleClick={handleDecrement}>
+          Decrement
+        </Button>
+
+        <Button type="primary" className="m-2" handleClick={handleIncrement}>
+          Increment
+        </Button>
       </div>
-      <h3 className="card__description">Counter value:</h3>
-      <p className="card__macro">
-        <b>{counter}</b>
-      </p>
-    </aside>
+
+      <h3>Counter value:</h3>
+
+      <p className="hero">{counter}</p>
+    </Card>
   );
 };
 
