@@ -5,8 +5,8 @@ import Container from "Components/Container";
 import Button from "Components/Button";
 
 const Intro = (props) => {
-  const [toggleClass, setToggleClass] = useState(false);
-  const [toggleHook, setToggleHook] = useState(false);
+  const [toggleClass, setToggleClass] = useState(true);
+  const [toggleHook, setToggleHook] = useState(true);
 
   function handleClassToggle() {
     setToggleClass(!toggleClass);
@@ -17,14 +17,26 @@ const Intro = (props) => {
   }
 
   return (
-    <Container>
-      <h1 className="title">Intro Page</h1>
-      <div className="text-align-center"></div>
-      <Button type="danger" onClick={handleClassToggle}>
-        Display class
-      </Button>
-      <Button type="success" onClick={handleHookToggle}>Display hook</Button>
-      <div className="counters">
+    <Container className="text-align-center">
+      <h1 className="title m-2">Intro Page</h1>
+      <div className="m-2">
+        <Button
+          type={toggleClass ? "danger" : "success"}
+          className="m-2"
+          handleClick={handleClassToggle}
+        >
+          Display class
+        </Button>
+        <Button
+          type={toggleHook ? "danger" : "success"}
+          className="m-2"
+          handleClick={handleHookToggle}
+        >
+          Display hook
+        </Button>
+      </div>
+
+      <div className="d-flex">
         {toggleClass && <ClassCounter />}
         {toggleHook && <HookCounter />}
       </div>
