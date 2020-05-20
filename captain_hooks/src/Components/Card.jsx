@@ -25,8 +25,12 @@ export const Link = ({ children, url }) => {
   );
 };
 
-const Card = ({ children, theme }) => {
-  return <aside className={`Card Card--${theme}`}>{children}</aside>;
+const Card = ({ children, className, theme }) => {
+  return (
+    <aside className={`Card Card--${theme} ${className || ""}`}>
+      {children}
+    </aside>
+  );
 };
 
 export default Card;
