@@ -45,6 +45,6 @@ If you run into an application error once you have deployed type in the command
 `heroku logs -a your_app_name --tail`  
 Look at the error messages it's throwing, it will help your resolve them.
 
-For the frontend, if you run into an error `H=10`, your application might require that you setup a build back.
+For the frontend, if you run into an error `H=10`, your application might require that you setup a build back.  
 In order to do so, navigate to `settings > buildpacks` and add `https://github.com/mars/create-react-app-buildpack.git` as buildpack.
 You will then have to redeploy :).
