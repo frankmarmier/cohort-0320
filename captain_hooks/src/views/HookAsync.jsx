@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import HookPokemon from "Components/HookPokemon";
-import HookListPokemon from "Components/HookListPokemon";
+import HookPokemon from "Components/Hooks/HookPokemon";
+import HookListPokemon from "Components/Hooks/HookListPokemon";
 import Container from "Components/Container";
+import "styles/HookAsync.scss";
 
 const HookAsync = () => {
-  const [selectedPokemon, setSelectedPokmon] = useState(null);
+  const [pokemonId, setPokemonId] = useState(null);
 
-  const handleSelectedPokemon = (index) => {
-    setSelectedPokmon(index + 1);
+  const handleSelectedPokemon = (id) => {
+    setPokemonId(id);
   };
 
   return (
     <Container>
-      <h1 className="title">Lets get some Pokemons !</h1>
-      <div className="d-flex">
+      <h2 className="title text-align-center">Lets get some Pokemons !</h2>
+      <section className="Pokemon-grid">
         <HookListPokemon pokemonHandler={handleSelectedPokemon} />
-        {selectedPokemon && <HookPokemon selectedPokemon={selectedPokemon} />}
-      </div>
+        {pokemonId !== null && <HookPokemon selectedPokemon={pokemonId} />}
+      </section>
     </Container>
   );
 };
