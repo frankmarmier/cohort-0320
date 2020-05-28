@@ -1,0 +1,14 @@
+{
+  "resources": [
+    {
+      "url": "https://reactjs.org/docs/hooks-overview.html",
+      "title": "React Hooks Documentation",
+      "description": "React official documentation on Hooks"
+    },
+    {
+      "url": "https://overreacted.io/a-complete-guide-to-useeffect/",
+      "title": "React useEffect by Dan Abramov",
+      "description": "React core developer Dan Abramov explains useEffect in details"
+    }
+  ]
+}
