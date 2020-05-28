@@ -6,11 +6,8 @@ import ClassAsync from "views/ClassAsync";
 import HookAsync from "views/HookAsync";
 import Intro from "views/Intro";
 import FormExample from "views/FormExample";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import Dependencies from "Components/Hooks/Dependencies";
 import "styles/App.scss";
-
-library.add(faPlus, faMinus);
 
 function App() {
   return (
@@ -21,6 +18,7 @@ function App() {
         <Route path="/intro" component={Intro} />
         <Route path="/class-async" component={ClassAsync} />
         <Route path="/hook-async" component={HookAsync} />
+        <Route path="/dependencies" component={Dependencies} />
         <Route path="/form" component={FormExample} />
       </Switch>
     </div>
