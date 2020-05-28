@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ClassCounter from "Components/ClassCounter";
-import HookCounter from "Components/HookCounter";
+import ClassCounter from "Components/Class/ClassCounter";
+import HookCounter from "Components/Hooks/HookCounter";
 import Container from "Components/Container";
 import Button from "Components/Button";
 
@@ -21,18 +21,18 @@ const Intro = (props) => {
       <h1 className="title m-2">Intro Page</h1>
       <div className="m-2">
         <Button
-          type={toggleClass ? "danger" : "success"}
+          type={toggleClass ? "danger-secondary" : "success"}
           className="m-2"
           handleClick={handleClassToggle}
         >
-          Display class
+          {!toggleClass ? "Display class" : "Hide class"}
         </Button>
         <Button
-          type={toggleHook ? "danger" : "success"}
+          type={toggleHook ? "danger-secondary" : "success"}
           className="m-2"
           handleClick={handleHookToggle}
         >
-          Display hook
+          {!toggleHook ? "Display hook" : "Hide hook"}
         </Button>
       </div>
 
