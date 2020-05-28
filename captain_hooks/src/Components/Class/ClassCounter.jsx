@@ -19,20 +19,6 @@ class ClassCounter extends Component {
     this.setState({ counter: this.state.counter - 1 });
   };
 
-  /* Updating the state with another syntax in a class by using a function
-    you receive as parameter the previous state object, and you should return
-    an object. 
-    That object will be the new state.
-  */
-
-  // handleIncrement = (event) => {
-  //   this.setState((state) => ({ ...state, counter: state.counter + 1 }));
-  // };
-
-  // handleDecrement = (event) => {
-  //   this.setState((state) => ({ ...state, counter: state.counter - 1 }));
-  // };
-
   render() {
     return (
       <Card className="text-align-center m-2" theme="dark">

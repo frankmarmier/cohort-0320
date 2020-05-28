@@ -1,26 +1,24 @@
 import React, { Component } from "react";
 import CardPokemon from "Components/CardPokemon";
-import apiHandler from "api/apiHandler";
-
-const pokemonAPI = new apiHandler("https://pokeapi.co/api/v2/pokemon");
+import pokemonAPI from "api/pokemonAPI";
 
 class ClassPokemon extends Component {
   state = {
     pokemon: null,
-    isLoading: false
+    isLoading: false,
   };
 
   componentDidMount() {
     this.setState({ isLoading: true });
     pokemonAPI
-      .get(`/${this.props.selectedPokemon}`)
-      .then(res => {
+      .getOne(this.props.selectedPokemon)
+      .then((data) => {
         //Emulating crappy internet in order to show Loading...
-        setTimeout(() => {
-          this.setState({ pokemon: res.data, isLoading: false });
+        this.timeoutId = setTimeout(() => {
+          this.setState({ pokemon: data, isLoading: false });
         }, 1000);
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ isLoading: false });
       });
   }
@@ -29,23 +27,25 @@ class ClassPokemon extends Component {
     if (prevProps.selectedPokemon !== this.props.selectedPokemon) {
       this.setState({ isLoading: true });
       pokemonAPI
-        .get(`${this.props.selectedPokemon}`)
-        .then(res => {
+        .getOne(this.props.selectedPokemon)
+        .then((data) => {
           //Emulating crappy internet in order to show Loading...
-          setTimeout(() => {
-            this.setState({ pokemon: res.data, isLoading: false });
+          this.timeoutId = setTimeout(() => {
+            this.setState({ pokemon: data, isLoading: false });
           }, 1000);
         })
-        .catch(err => {
+        .catch((err) => {
           this.setState({ isLoading: false });
         });
     }
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    clearTimeout(this.timeoutId);
+  }
 
   render() {
-    if (this.state.isLoading) return <div>Loading...</div>;
+    if (this.state.isLoading) return null;
     if (!this.state.pokemon) return <div>404 No pokemon here.</div>;
 
     return (
