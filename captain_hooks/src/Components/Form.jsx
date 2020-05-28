@@ -4,7 +4,7 @@ import Button from "Components/Button";
 import "styles/Form.scss";
 
 const Form = (props) => {
-  const { formValues, getInputProps, handleChange } = useForm();
+  const { formValues, handleChange } = useForm();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +27,7 @@ const Form = (props) => {
           className="Form__input"
           id="firstName"
           type="text"
-          {...getInputProps("firstName")}
+          name="firstName"
         />
       </div>
       <div className="Form__group">
@@ -38,19 +38,14 @@ const Form = (props) => {
           className="Form__input"
           id="lastName"
           type="text"
-          {...getInputProps("lastName")}
+          name="lastName"
         />
       </div>
       <div className="Form__group">
         <label className="Form__label" htmlFor="email">
           Email
         </label>
-        <input
-          className="Form__input"
-          id="email"
-          type="email"
-          {...getInputProps("email")}
-        />
+        <input className="Form__input" id="email" type="email" name="email" />
       </div>
       <div className="Form__group">
         <label className="Form__label" htmlFor="password">
@@ -60,19 +55,14 @@ const Form = (props) => {
           className="Form__input"
           id="password"
           type="password"
-          {...getInputProps("password")}
+          name="password"
         />
       </div>
       <div className="Form__group">
         <label className="Form__label" htmlFor="isAdmin">
           Admin
         </label>
-        <input
-          className="Form__input"
-          id="isAdmin"
-          type="checkbox"
-          {...getInputProps("isAdmin")}
-        />
+        <input className="Form__input" id="isAdmin" type="checkbox" />
       </div>
       <Button type="success">Submit</Button>
     </form>

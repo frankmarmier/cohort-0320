@@ -5,32 +5,26 @@ import { useState } from "react";
 // ----- Custom Hook useForm -----
 
 */
+
 export function useForm(initialValues = {}) {
   const [formValues, setFormValues] = useState(initialValues);
 
   function handleChange(event) {
-    let value =
+    const value =
       event.target.type === "checkbox"
         ? event.target.checked
+        : event.target.type === "file"
+        ? event.target.files[0]
         : event.target.value;
+    const key = event.target.name;
     setFormValues({
       ...formValues,
-      [event.target.name]: value,
+      [key]: value,
     });
-  }
-
-  function getInputProps(fieldName) {
-    return {
-      name: fieldName,
-      value: formValues[fieldName] || "",
-      checked: formValues[fieldName] || false,
-      onChange: handleChange,
-    };
   }
 
   return {
     formValues,
-    getInputProps,
     handleChange,
   };
 }
