@@ -26,6 +26,11 @@ const NavMain = (props) => {
             Hook Async
           </NavLink>
         </li>
+        <li className="NavMain__nav-item">
+          <NavLink to="/dependencies" className="NavMain__link">
+            Dependencies
+          </NavLink>
+        </li>
         <li className="NavMain__item">
           <NavLink to="/form" className="NavMain__link">
             Form Example
