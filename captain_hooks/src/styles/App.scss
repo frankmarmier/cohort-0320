@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,900&display=swap");
 @import "./variables";
 @import "./typography.scss";
+@import "./utils.scss";
 
 * {
   box-sizing: border-box;
@@ -31,4 +32,5 @@ input[type="submit"] a {
   background-attachment: fixed;
   color: ghostwhite;
   min-height: 100vh;
+  overflow: hidden;
 }
